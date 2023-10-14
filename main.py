@@ -1,6 +1,7 @@
 import numpy as np
 import streamlit as st
 
+def drone():
 
 
     st.markdown('<div style="color: white;font-size: 32px;font-weight: bold;">Fire Fighting with Drone WEBSITE</div>',
