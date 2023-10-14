@@ -1,2 +1,2 @@
 streamlit==1.27.2
-numpyav==66
+numpy==1.23.5
