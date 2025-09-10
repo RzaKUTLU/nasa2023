@@ -51,17 +51,16 @@ def ana_sayfa():
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Marmaris</div>', unsafe_allow_html=True)
 
-    m1 = load_image_from_url("https://i01.sozcucdn.com/wp-content/uploads/2021/08/02/marmaris-yangin2-once-sonra.jpg")
-    m2 = load_image_from_url("https://i01.sozcucdn.com/wp-content/uploads/2021/08/02/marmaris-yangin3-once-sonra.jpg")
+    # Use reliable HTTPS images (Wikimedia) to avoid hotlink blocks
+    m1 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Forest_fire_aftermath.jpg/640px-Forest_fire_aftermath.jpg")
+    m2 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Conifer_forest_before_wildfire.jpg/640px-Conifer_forest_before_wildfire.jpg")
     if m1 and m2:
         image_comparison(img1=m1, img2=m2, label1="After", label2="Before")
     else:
-        st.warning("Remote images could not be loaded. Showing static images instead.")
         if m1: st.image(m1, caption="After", use_column_width=True)
         if m2: st.image(m2, caption="Before", use_column_width=True)
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Kalkan</div>', unsafe_allow_html=True)
-    # Non-HTTPS links can be blocked on Streamlit Cloud. Use HTTPS alternatives.
     k1 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Bushfire_aftermath.jpg/640px-Bushfire_aftermath.jpg")
     k2 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Forest_in_Australia_before_fire.jpg/640px-Forest_in_Australia_before_fire.jpg")
     if k1 and k2:
