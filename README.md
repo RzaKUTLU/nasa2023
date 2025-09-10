@@ -20,7 +20,6 @@ streamlit run main.py
 
 ## Gereksinimler
 - Python 3.9+
-- Streamlit, Pillow, streamlit-image-comparison
 
 ## Notlar
 - Görseller repo içinden relative path ile kullanılır; harici mutlak path yoktur.
