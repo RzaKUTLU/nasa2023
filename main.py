@@ -1,12 +1,11 @@
 import streamlit as st
 from streamlit_image_comparison import image_comparison
 from PIL import Image
-import cv2
 
 
 # Ana Sayfa
 def ana_sayfa():
-    image = Image.open("/Users/kutlu/PycharmProjects/Streamlit-NASA/Adsız_tasarım-4-removebg-preview.png")
+    image = Image.open("Adsız_tasarım-4-removebg-preview.png")
     # Resmi göster, belirli bir yüzde oranında küçült
     st.image(image, use_column_width=True, width=image.width // 10)
 
@@ -28,10 +27,7 @@ def ana_sayfa():
     st.text("")
     st.text("")
 
-    # st.markdown("<h2 style='color:white; font-weight: bold;font-size:35px;'>METİN</h2>",
-    #   unsafe_allow_html=True)
-
-    # Başlık metnini beyaz renkte görüntülemek için CSS kullanma / st.markdown('<div style="color: white;font-size: 32px;font-weight: bold;">🔥Yangına Drone ile Müdahele</div>', unsafe_allow_html=True)
+    # Başlık metni
     st.markdown('<div style="color: white;font-size: 32px;font-weight: bold;">Fire Fighting with Drone</div>',
                 unsafe_allow_html=True)
 
@@ -40,7 +36,6 @@ def ana_sayfa():
     This project aims to control and extinguish fires with unmanned aerial vehicles (drones), especially in areas where fire types and access to fire zones are difficult. Drones can quickly reach the scene of a fire and use high-resolution cameras and equipment to monitor the spread of the fire, surveil the fire and provide data to intervene. This project aims to improve fire safety and effectiveness by providing firefighters with more information and resources. The images below are intended to illustrate the situation caused by fires in some regions in our country and around the world.
       ."""
 
-    # Yazıyı beyaz renkte, arka planı kaldırmak ve yazıyı kalın yapmak için stil özellikleri kullanarak HTML kullanımı
     st.markdown(f'<div style="color: white; font-weight: bold;">{text}</div>', unsafe_allow_html=True)
     st.write("")
 
@@ -100,7 +95,7 @@ def ana_sayfa():
 
 # Hakkımızda Sayfası
 def hakkimizda():
-    image = Image.open("/Users/kutlu/PycharmProjects/Streamlit-NASA/biz kimiz.png")
+    image = Image.open("biz kimiz.png")
     st.image(image, caption="PNG Resmi", use_column_width=True)
     page_by_img = """
                <style>
@@ -120,8 +115,6 @@ def hakkimizda():
 
 
 # Yangın Nedir Sayfası
-import streamlit as st
-
 
 def drone():
     page_by_img = """
@@ -212,24 +205,10 @@ def yangin_nedir():
              "<br>6. Shrubs and Thin Branches: They burn faster and usually go out within minutes.     \n"
               "<br>However, these times can vary greatly depending on factors such as environmental conditions, moisture content and fire severity.To estimate burn times more precisely, fire scientists and experts conduct laboratory tests and field experiments.Care must always be taken in terms of fire safety and appropriate equipment and precautions must be taken to control fires."
              """
-             <br><br><br>
-             <div style="color: white;font-size: 32px;font-weight: bold;">Chemical ingredients to be used in drones </div>
-             
-The main ingredients in an ABC class A fire extinguisher (chemical fire extinguisher) usually include the following: 
- 
-1. Monoammonium Phosphate (NH4H2PO4): This substance is an effective chemical component for extinguishing solid fires (Class A). It absorbs heat during the combustion of solid materials and cools the fire. 
- 
-2. Monoammonium Sulfate [(NH4)2SO4]: Monoammonium sulfate is another chemical compound used to extinguish solid fires. It absorbs heat and cools during a fire. 
- 
-3. Super Active Potassium Sulfate (Super Active K): This is an additive used in ABC fire extinguishers to extinguish Class A fires more effectively. It provides faster and more effective fire extinguishing. 
- 
-4. Gas Pressure: ABC fire extinguishers need pressure to spray the chemical powders they contain. Inactive gases such as nitrogen or carbon dioxide are usually used. 
- 
-These components ensure the functionality of ABC fire extinguishers and help them to be used effectively against different types of fires. However, the contents and performance of the extinguisher can vary from manufacturer to manufacturer, so it is important to carefully read the contents and instructions for use of a particular product. Furthermore, fire extinguishers should be periodically checked and maintained so that they work reliably when they need to be used.
-             """)
+             "<br><br><br>")
     st.write("")
     st.markdown(f'<div style="color: white;font-size: 22px; font-weight: bold;">{textd}</div>', unsafe_allow_html=True)
-    image_url = "/Users/kutlu/PycharmProjects/Streamlit-NASA/ABCDK 2 WEB.jpg"
+    image_url = "ABCDK 2 WEB.jpg"
 
 
 
@@ -258,7 +237,6 @@ def termal_kamera():
 
     text2 = """ helps the user to assess the fire risk of each pixel clicked in a thermal image based on the HSV color space. If the clicked region is within a certain color range, it is indicated that this region may be at risk of fire. This can be used for fire detection or intervention in fire zones."""
 
-    # Yazıyı beyaz renkte, arka planı kaldırmak ve yazıyı kalın yapmak için stil özellikleri kullanarak HTML kullanımı
     st.markdown(f'<div style="color: white; font-weight: bold;">{text2}</div>', unsafe_allow_html=True)
     youtube_url = "https://youtu.be/x60jHQTFCAQ"
     st.video(youtube_url)
@@ -267,66 +245,47 @@ def termal_kamera():
 def yangınla_mücadele():
     st.markdown('<div style="color: black;font-size: 32px;font-weight: bold;">BİLGİLENDİRME', unsafe_allow_html=True)
 
-    # gömme kodunu gömme 1
+    # gömme kodları
     embed_code = """
     <iframe src="https://e.infogram.com/0b17d02d-f89d-4eba-a631-b601f9588600?src=embed" title="ormanlık alan en fazla iller" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe> """
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # gömme kodunu gömme 2
     embed_code = """
    <iframe src="https://e.infogram.com/4c3fb452-1fb6-4214-a43e-2a8a8353277c?src=embed" title="ormanlık alan iller en az" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>"""
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # gömme kodunu gömme 3
     embed_code = """
    <iframe src="https://e.infogram.com/c3361aa6-203d-4beb-b2ce-e8d4a2a7481c?src=embed" title="ormanlık alan yüzölçüm az" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>"""
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # gömme kodunu gömme 4
     embed_code = """
     <iframe src="https://e.infogram.com/0b17d02d-f89d-4eba-a631-b601f9588600?src=embed" title="ormanlık alan en fazla iller" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe> """
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # gömme kodunu gömme 5
     embed_code = """
     <iframe src="https://e.infogram.com/d3538700-a492-4863-b1a9-2b91b6712fc5?src=embed" title="TR ormanlık alan nüfusa göre" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>"""
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # gömme kodunu gömme 6
     embed_code = """
    <iframe src="https://e.infogram.com/58219bf9-227f-46d6-8d66-05922249c570?src=embed" title="ormanlık alan nüfus düşük iller" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>"""
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # gömme kodunu gömme 7
     embed_code = """
     <iframe src='http://vis.ecowest.org/interactive/wildfires-play.php#' width='700' height='550' frameborder='0' ></iframe>"""
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # Bölge, bilgi metni ve ilgili fotoğrafları içeren bir sözlük oluşturun
-    information = {
-        "Biological Plant Diversity in Turkey by Regions": {
-            "Text": "In our country, the trees growing in forests include poplar, oak, storax, plane tree, lime, hornbeam, birch, chestnut, storax, fir, juniper, maple, red pine, spruce, pine, cedar, oak, beech, cedar, and turkey oak.",
-            "Photo": "https://ustakunduz.com/wp-content/uploads/2021/02/turkiyedekli-agac-turleri.jpg"
-            # Specify the path to the photo file
-        }
-    }
-
     # Başlık
     st.title("Türkiye Orman Haritası")
 
-    # İstockphoto'dan alınan fotoğrafın URL'si
-    image_url = "/Users/kutlu/PycharmProjects/Streamlit-NASA/Ekran Resmi 2023-10-08 15.31.22.png"
+    image_url = "Ekran Resmi 2023-10-08 15.31.22.png"
 
-    # Fotoğrafı aç
     st.image(image_url, caption="Türkiye Orman Haritası", use_column_width=True)
 
     text2 = """ helps the user to assess the fire risk of each pixel clicked in a thermal image based on the HSV color space. If the clicked region is within a certain color range, it is indicated that this region may be at risk of fire. This can be used for fire detection or intervention in fire zones."""
 
     st.text("")
 
-
-    # Yazıyı beyaz renkte, arka planı kaldırmak ve yazıyı kalın yapmak için stil özellikleri kullanarak HTML kullanımı
-    st.markdown(f'<div style="color: white;font-size: 22px; font-weight: bold;">{text3}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div style="color: white;font-size: 22px; font-weight: bold;">{text2}</div>', unsafe_allow_html=True)
 
 
 # İletişim Sayfası
@@ -357,14 +316,13 @@ def iletisim():
 
     st.write("rza.kutluu@gmail.com")
 
-    # İletişim formu eklemek için bir metin kutusu kullanabilirsiniz
+    # İletişim formu
     st.header("İletişim Formu")
     isim = st.text_input("İsim")
     email = st.text_input("E-posta")
     mesaj = st.text_area("Mesaj")
     gonder = st.button("Gönder")
 
-    # Gönder düğmesine tıklanırsa işlem yapabilirsiniz
     if gonder:
         st.success("Mesajınız gönderildi!")
 
