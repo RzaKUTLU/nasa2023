@@ -1,6 +1,6 @@
 # NASA 2023 – Fire Fighting with Drones (Streamlit)
 
-Bu proje, orman yangınlarına insansız hava araçlarıyla (drone) müdahaleyi anlatan interaktif bir Streamlit uygulamasıdır. Marmaris, Kalkan ve Kaliforniya örnekleriyle önce/sonra görüntü karşılaştırmaları, termal kamera çalışma prensibi ve bilgilendirici görselleştirmeler içerir.
+Bu proje, orman yangınlarına görüntü işleme ve insansız hava araçlarıyla (drone) müdahaleyi anlatan interaktif bir Streamlit uygulamasıdır.
 
 ## 🚀 Canlı Demo
 
