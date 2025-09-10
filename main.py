@@ -51,14 +51,12 @@ def ana_sayfa():
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Marmaris</div>', unsafe_allow_html=True)
 
-    # Use reliable HTTPS images (Wikimedia) to avoid hotlink blocks
-    m1 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Forest_fire_aftermath.jpg/640px-Forest_fire_aftermath.jpg")
-    m2 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Conifer_forest_before_wildfire.jpg/640px-Conifer_forest_before_wildfire.jpg")
-    if m1 and m2:
-        image_comparison(img1=m1, img2=m2, label1="After", label2="Before")
+    # Marmaris için tek görsel (öncesi/sonrası birlikte)
+    marmaris_image = load_image_from_url("https://img.piri.net/mnresize/712/-/resim/imagecrop/2021/08/11/04/22/resized_2f410-0d60c70843003842.jpg")
+    if marmaris_image:
+        st.image(marmaris_image, caption="Marmaris - Öncesi ve Sonrası", use_column_width=True)
     else:
-        if m1: st.image(m1, caption="After", use_column_width=True)
-        if m2: st.image(m2, caption="Before", use_column_width=True)
+        st.warning("Marmaris görseli yüklenemedi.")
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Kalkan</div>', unsafe_allow_html=True)
     k1 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Bushfire_aftermath.jpg/640px-Bushfire_aftermath.jpg")
