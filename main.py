@@ -99,15 +99,15 @@ def hakkimizda():
     st.image(image, caption="PNG Resmi", use_column_width=True)
     page_by_img = """
                <style>
-               [data-testid=\"stAppViewContainer\"]{
-               background: url(\"https://shiftdelete.net/wp-content/uploads/2021/07/atesi-ates-ile-sonduren-drone-orman-yanginlarini-cozumu-olabilir-3.jpg\");
+               [data-testid="stAppViewContainer"]{
+               background: url("https://shiftdelete.net/wp-content/uploads/2021/07/atesi-ates-ile-sonduren-drone-orman-yanginlarini-cozumu-olabilir-3.jpg");
                background-size: cover;top: 0px}
 
-               [data-testid=\"stHeader\"]{
+               [data-testid="stHeader"]{
                background-color: rgba(0,0,0,0);
                 }
 
-               [data-testid=\"stToolbar\"]{
+               [data-testid="stToolbar"]{
                right: 2rem;}
                </style>
                 """
@@ -119,15 +119,15 @@ def hakkimizda():
 def drone():
     page_by_img = """
              <style>
-             [data-testid=\"stAppViewContainer\"]{
-             background: url(\"https://i.gazeteoksijen.com/storage/files/images/2022/06/01/yasamak-bir-orman-gibi-kardescesine-GDL0.jpg\");
+             [data-testid="stAppViewContainer"]{
+             background: url("https://i.gazeteoksijen.com/storage/files/images/2022/06/01/yasamak-bir-orman-gibi-kardescesine-GDL0.jpg");
              background-size: cover;top: 0px}
 
-             [data-testid=\"stHeader\"]{
+             [data-testid="stHeader"]{
              background-color: rgba(0,0,0,0);
               }
 
-             [data-testid=\"stToolbar\"]{
+             [data-testid="stToolbar"]{
              right: 2rem;}
              </style>
               """
@@ -164,15 +164,15 @@ def drone():
 def yangin_nedir():
     page_by_img = """
              <style>
-             [data-testid=\"stAppViewContainer\"]{
-             background: url(\"https://i.gazeteoksijen.com/storage/files/images/2022/06/01/yasamak-bir-orman-gibi-kardescesine-GDL0.jpg\");
+             [data-testid="stAppViewContainer"]{
+             background: url("https://i.gazeteoksijen.com/storage/files/images/2022/06/01/yasamak-bir-orman-gibi-kardescesine-GDL0.jpg");
              background-size: cover;top: 0px}
 
-             [data-testid=\"stHeader\"]{
+             [data-testid="stHeader"]{
              background-color: rgba(0,0,0,0);
               }
 
-             [data-testid=\"stToolbar\"]{
+             [data-testid="stToolbar"]{
              right: 2rem;}
              </style>
               """
@@ -185,7 +185,7 @@ def yangin_nedir():
                 unsafe_allow_html=True)
 
     st.write("")
-    textd = ("\n"
+    textd = (
              "Tree burn times ;  \n"
              "Burning times of trees can vary greatly in minutes and depend on many factors. Generally, thin branches or leaves burn quickly and are extinguished within a few minutes, while thicker wood or the trunk may burn longer and may last for hours or even days. In addition, the severity of the fire, moisture content in the tree and other environmental conditions can also affect the burn time. It is therefore difficult to give a more precise burn time in minutes for a particular tree species or conditions. \n"
              "The burn times of trees can vary greatly depending on factors such as the type of tree, moisture content, size and severity of the fire. Below you can find general information about the approximate burn times of common tree species, but these times can vary depending on the conditions: \n"
@@ -195,9 +195,9 @@ def yangin_nedir():
              "<br>4. Sycamore Trees: A medium-sized plane tree can burn for about 30 minutes to an hour. \n"
              "<br>5. Alder Trees: Alder trees, due to their denser wood, can also burn for a long time, in hours. \n"
              "<br>6. Shrubs and Thin Branches: They burn faster and usually go out within minutes.     \n"
-              "<br>However, these times can vary greatly depending on factors such as environmental conditions, moisture content and fire severity.To estimate burn times more precisely, fire scientists and experts conduct laboratory tests and field experiments.Care must always be taken in terms of fire safety and appropriate equipment and precautions must be taken to control fires."
-             """
-             "<br><br><br>")
+             "<br>However, these times can vary greatly depending on factors such as environmental conditions, moisture content and fire severity.To estimate burn times more precisely, fire scientists and experts conduct laboratory tests and field experiments.Care must always be taken in terms of fire safety and appropriate equipment and precautions must be taken to control fires."
+             "<br><br><br>"
+    )
     st.write("")
     st.markdown(f'<div style="color: white;font-size: 22px; font-weight: bold;">{textd}</div>', unsafe_allow_html=True)
 
@@ -206,15 +206,15 @@ def yangin_nedir():
 def termal_kamera():
     page_by_img = """
              <style>
-             [data-testid=\"stAppViewContainer\"]{
-             background: url(\"https://i.gazeteoksijen.com/storage/files/images/2022/06/01/yasamak-bir-orman-gibi-kardescesine-GDL0.jpg\");
+             [data-testid="stAppViewContainer"]{
+             background: url("https://i.gazeteoksijen.com/storage/files/images/2022/06/01/yasamak-bir-orman-gibi-kardescesine-GDL0.jpg");
              background-size: cover;top: 0px}
 
-             [data-testid=\"stHeader\"]{
+             [data-testid="stHeader"]{
              background-color: rgba(0,0,0,0);
               }
 
-             [data-testid=\"stToolbar\"]{
+             [data-testid="stToolbar"]{
              right: 2rem;}
              </style>
               """
@@ -283,15 +283,15 @@ def yangınla_mücadele():
 def iletisim():
     page_by_img = """
              <style>
-             [data-testid=\"stAppViewContainer\"]{
-             background: url(\"https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2\");
+             [data-testid="stAppViewContainer"]{
+             background: url("https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
              background-size: cover;top: 0px}
 
-             [data-testid=\"stHeader\"]{
+             [data-testid="stHeader"]{
              background-color: rgba(0,0,0,0);
               }
 
-             [data-testid=\"stToolbar\"]{
+             [data-testid="stToolbar"]{
              right: 2rem;}
              </style>
               """
