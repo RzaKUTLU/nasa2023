@@ -1,12 +1,23 @@
 import streamlit as st
 from streamlit_image_comparison import image_comparison
 from PIL import Image
+import io
+import requests
+
+
+def load_image_from_url(url: str, timeout: int = 10):
+    try:
+        headers = {"User-Agent": "Mozilla/5.0"}
+        resp = requests.get(url, headers=headers, timeout=timeout)
+        resp.raise_for_status()
+        return Image.open(io.BytesIO(resp.content)).convert("RGB")
+    except Exception:
+        return None
 
 
 # Ana Sayfa
 def ana_sayfa():
     image = Image.open("Adsız_tasarım-4-removebg-preview.png")
-    # Resmi göster, belirli bir yüzde oranında küçült
     st.image(image, use_column_width=True, width=image.width // 10)
 
     page_by_img = """
@@ -27,7 +38,6 @@ def ana_sayfa():
     st.text("")
     st.text("")
 
-    # Başlık metni
     st.markdown('<div style="color: white;font-size: 32px;font-weight: bold;">Fire Fighting with Drone</div>',
                 unsafe_allow_html=True)
 
@@ -41,54 +51,63 @@ def ana_sayfa():
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Marmaris</div>', unsafe_allow_html=True)
 
-    image_comparison(
-        img1="https://i01.sozcucdn.com/wp-content/uploads/2021/08/02/marmaris-yangin2-once-sonra.jpg",
-        img2="https://i01.sozcucdn.com/wp-content/uploads/2021/08/02/marmaris-yangin3-once-sonra.jpg",
-        label1="After",
-        label2="Before",
-
-    )
+    m1 = load_image_from_url("https://i01.sozcucdn.com/wp-content/uploads/2021/08/02/marmaris-yangin2-once-sonra.jpg")
+    m2 = load_image_from_url("https://i01.sozcucdn.com/wp-content/uploads/2021/08/02/marmaris-yangin3-once-sonra.jpg")
+    if m1 and m2:
+        image_comparison(img1=m1, img2=m2, label1="After", label2="Before")
+    else:
+        st.warning("Remote images could not be loaded. Showing static images instead.")
+        if m1: st.image(m1, caption="After", use_column_width=True)
+        if m2: st.image(m2, caption="Before", use_column_width=True)
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Kalkan</div>', unsafe_allow_html=True)
-    image_comparison(
-        img1="http://www.detaykibris.com/d/gallery/514_2.jpg",
-        img2="http://www.detaykibris.com/d/gallery/514_3.jpg",
-        label1="After",
-        label2="Before",
-    )
+    k1 = load_image_from_url("http://www.detaykibris.com/d/gallery/514_2.jpg")
+    k2 = load_image_from_url("http://www.detaykibris.com/d/gallery/514_3.jpg")
+    if k1 and k2:
+        image_comparison(img1=k1, img2=k2, label1="After", label2="Before")
+    else:
+        if k1: st.image(k1, caption="After", use_column_width=True)
+        if k2: st.image(k2, caption="Before", use_column_width=True)
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Santa Rosa, Kaliforniya</div>',
                 unsafe_allow_html=True)
-    image_comparison(
-        img1="https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/coffey-park-after.jpg",
-        img2="https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/coffey-park-before.jpg",
-        label1="After",
-        label2="Before",
-    )
+    s1 = load_image_from_url("https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/coffey-park-after.jpg")
+    s2 = load_image_from_url("https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/coffey-park-before.jpg")
+    if s1 and s2:
+        image_comparison(img1=s1, img2=s2, label1="After", label2="Before")
+    else:
+        if s1: st.image(s1, caption="After", use_column_width=True)
+        if s2: st.image(s2, caption="Before", use_column_width=True)
+
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Fountaingrove Round Barn</div>',
                 unsafe_allow_html=True)
-    image_comparison(
-        img1="https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/barn-before.jpg",
-        img2="https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/barn-after.jpg",
-        label1="After",
-        label2="Before",
-    )
+    f1 = load_image_from_url("https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/barn-before.jpg")
+    f2 = load_image_from_url("https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/barn-after.jpg")
+    if f1 and f2:
+        image_comparison(img1=f1, img2=f2, label1="After", label2="Before")
+    else:
+        if f1: st.image(f1, caption="After", use_column_width=True)
+        if f2: st.image(f2, caption="Before", use_column_width=True)
+
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Santa Rosa, Fountaingrove bölgesi</div>',
                 unsafe_allow_html=True)
-    image_comparison(
-        img1="https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/hilton-after.jpg",
-        img2="https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/hilton-before.jpg",
-        label1="After",
-        label2="Before",
-    )
+    h1 = load_image_from_url("https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/hilton-after.jpg")
+    h2 = load_image_from_url("https://static01.nyt.com/newsgraphics/2017/10/09/cali-fires/6aac41a1a254730e98581e3614f8a4aaebd48ee1/hilton-before.jpg")
+    if h1 and h2:
+        image_comparison(img1=h1, img2=h2, label1="After", label2="Before")
+    else:
+        if h1: st.image(h1, caption="After", use_column_width=True)
+        if h2: st.image(h2, caption="Before", use_column_width=True)
+
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Avustralya/Flinders Chase Ulusal Parkı</div>',
                 unsafe_allow_html=True)
-    image_comparison(
-        img1="https://ichef.bbci.co.uk/news/800/cpsprodpb/9488/production/_110542083_058989880.jpg",
-        img2="https://ichef.bbci.co.uk/news/800/cpsprodpb/12902/production/_110543067_gettyimages-186613189.jpg",
-        label1="After",
-        label2="Before",
-    )
+    a1 = load_image_from_url("https://ichef.bbci.co.uk/news/800/cpsprodpb/9488/production/_110542083_058989880.jpg")
+    a2 = load_image_from_url("https://ichef.bbci.co.uk/news/800/cpsprodpb/12902/production/_110543067_gettyimages-186613189.jpg")
+    if a1 and a2:
+        image_comparison(img1=a1, img2=a2, label1="After", label2="Before")
+    else:
+        if a1: st.image(a1, caption="After", use_column_width=True)
+        if a2: st.image(a2, caption="Before", use_column_width=True)
 
     st.write("Bu ana sayfadaki içerik...")
 
@@ -138,7 +157,6 @@ def drone():
     st.markdown('<div style="color: white;font-size: 32px;font-weight: bold;">front cover</div>',
                 unsafe_allow_html=True)
 
-    # YouTube video linki
     video_link = "https://www.youtube.com/watch?v=wCNlORnXpe8"
     st.video(video_link)
 
@@ -236,7 +254,6 @@ def termal_kamera():
 def yangınla_mücadele():
     st.markdown('<div style="color: black;font-size: 32px;font-weight: bold;">BİLGİLENDİRME</div>', unsafe_allow_html=True)
 
-    # gömme kodları
     embed_code = """
     <iframe src="https://e.infogram.com/0b17d02d-f89d-4eba-a631-b601f9588600?src=embed" title="ormanlık alan en fazla iller" width="550" height="673" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe> """
     st.markdown(embed_code, unsafe_allow_html=True)
@@ -265,7 +282,6 @@ def yangınla_mücadele():
     <iframe src='http://vis.ecowest.org/interactive/wildfires-play.php#' width='700' height='550' frameborder='0' ></iframe>"""
     st.markdown(embed_code, unsafe_allow_html=True)
 
-    # Başlık
     st.title("Türkiye Orman Haritası")
 
     image_url = "Ekran Resmi 2023-10-08 15.31.22.png"
@@ -307,7 +323,6 @@ def iletisim():
 
     st.write("rza.kutluu@gmail.com")
 
-    # İletişim formu
     st.header("İletişim Formu")
     isim = st.text_input("İsim")
     email = st.text_input("E-posta")
