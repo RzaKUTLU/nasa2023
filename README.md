@@ -2,6 +2,10 @@
 
 Bu proje, orman yangınlarına insansız hava araçlarıyla (drone) müdahaleyi anlatan interaktif bir Streamlit uygulamasıdır. Marmaris, Kalkan ve Kaliforniya örnekleriyle önce/sonra görüntü karşılaştırmaları, termal kamera çalışma prensibi ve bilgilendirici görselleştirmeler içerir.
 
+## 🚀 Canlı Demo
+
+**[🌐 Uygulamayı Görüntüle](https://nasa2023.streamlit.app/)**
+
 ## Özellikler
 - Görsel karşılaştırmalar (before/after)
 - Termal kamera çalışma prensibi (video)
