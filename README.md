@@ -27,4 +27,4 @@ streamlit run main.py
 - Kod sadeleştirildi (kullanılmayan importlar temizlendi, küçük hatalar düzeltildi).
 
 ## Lisans
-Bu depo eğitim amaçlı örnek bir projedir.
+Bu depo eğitim amaçlı örnek bir projedir. Space Apps NASA 2023 Samsun ayağında 1. olan içerisinde yer aldığım ekibin projesidir.
