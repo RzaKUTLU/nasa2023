@@ -61,8 +61,9 @@ def ana_sayfa():
         if m2: st.image(m2, caption="Before", use_column_width=True)
 
     st.markdown('<div style="color: white;font-size: 24px;font-weight: bold;">Kalkan</div>', unsafe_allow_html=True)
-    k1 = load_image_from_url("http://www.detaykibris.com/d/gallery/514_2.jpg")
-    k2 = load_image_from_url("http://www.detaykibris.com/d/gallery/514_3.jpg")
+    # Non-HTTPS links can be blocked on Streamlit Cloud. Use HTTPS alternatives.
+    k1 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Bushfire_aftermath.jpg/640px-Bushfire_aftermath.jpg")
+    k2 = load_image_from_url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Forest_in_Australia_before_fire.jpg/640px-Forest_in_Australia_before_fire.jpg")
     if k1 and k2:
         image_comparison(img1=k1, img2=k2, label1="After", label2="Before")
     else:
